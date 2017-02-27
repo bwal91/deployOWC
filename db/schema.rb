@@ -49,24 +49,6 @@ ActiveRecord::Schema.define(version: 20170222210032) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "chat_messages", force: :cascade do |t|
-    t.text     "body"
-    t.integer  "member_id"
-    t.integer  "chat_room_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["chat_room_id"], name: "index_chat_messages_on_chat_room_id"
-    t.index ["member_id"], name: "index_chat_messages_on_member_id"
-  end
-
-  create_table "chat_rooms", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "member_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_chat_rooms_on_member_id"
-  end
-
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.string  "unsubscriber_type"
     t.integer "unsubscriber_id"
