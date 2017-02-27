@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-  
+  before_action :authenticate_user!, only: :show
 
   def index
-  	@user = User.order(:first_name).where("lower(first_name) LIKE '#{:term}' or lower(last_name) LIKE '#{:term}'")
-  	render json: @users.map(&:name)
+    @users = User.all
   end
 
   # def import
@@ -20,6 +19,13 @@ class UsersController < ApplicationController
   	else
   		render :back
   	end
+  end
+
+  def show 
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to :back, :alert => "Access denied."
+    end
   end
 
 

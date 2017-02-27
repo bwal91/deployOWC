@@ -9,15 +9,27 @@ body, html {
     height: 100%;
     color: black;
 }
+
 #sponsor {
-  margin-bottom: auto;
+  margin-bottom: 20px;
 }
 .red{
     color:red;
 }
-.form-area
-{
+.form-area {
   background-color: #97c53b;
+	padding: 10px 40px 60px;
+	margin: 10px 0px 60px;
+	border: 1px solid GREY;
+
+}
+.wrapper{
+  min-height:100%;
+  position:relative;
+
+}
+#header {
+
     padding: 10px 40px 60px;
     margin: 10px 0px 60px;
     border: 1px solid GREY;
@@ -29,12 +41,21 @@ body, html {
 #header {
    padding:10px;
 }
+
 #footer{
   position: relative;
   margin-top: -180px; /* negative value of footer height */
   height: 75px;
   clear: both;  /* Height of the footer */
   background-color: #efefef;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 .container-fluid{
   text-align: center;

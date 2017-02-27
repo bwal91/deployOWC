@@ -1,10 +1,11 @@
 class User < ApplicationRecord
+	
+	devise :database_authenticatable, :registerable,
+		:recoverable, :rememberable, :trackable, :validatable
 
 	acts_as_messageable
 
-	
-	has_many :chat_rooms, dependent: :destroy
-	has_many :chat_messages, dependent: :destroy
+	after_create :send_admin_mail
 
 	def mailboxer_name
 		self.name
@@ -18,17 +19,10 @@ class User < ApplicationRecord
 		self[:first_name]+" "+self[:last_name]
 	end
 	
-	# def self.search(term)
-	# 	params[:term].downcase!
-	# 	where("lower(first_name) LIKE '#{:term}' or lower(last_name) LIKE '#{:term}'")
-	# end
-	# def recipients
-	# 	recipient.try(:name)
-	# end
+	def send_admin_mail
+	  UserMailer.send_welcome_email(self).deliver_later
+	end
 
-	# def recipients=(term)
-	# 	self.recipient = User.where("lower(first_name) LIKE '#{:term}' or lower(last_name) LIKE '#{:term}'")
-	# end
 
 
 	# require 'csv'

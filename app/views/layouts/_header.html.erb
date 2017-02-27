@@ -81,7 +81,7 @@
                 <button type="submit" class="btn btn-default">Search</button>
               </form>
               <!-- Login -->
-              <% if current_user %>
+              <% if user_signed_in? %>
               <ul class="nav navbar-nav pull-right">
               <li><%= link_to "Hello, #{current_user.first_name}", "#" %></li>
               <li><%= link_to "Inbox", mailbox_inbox_path %></li>

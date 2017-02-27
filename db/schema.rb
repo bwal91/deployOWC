@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222210032) do
+ActiveRecord::Schema.define(version: 20170227201957) do
 
   create_table "Payments", force: :cascade do |t|
     t.string   "date_payment"
@@ -28,43 +28,6 @@ ActiveRecord::Schema.define(version: 20170222210032) do
     t.string   "comments"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-  end
-
-  create_table "Users", force: :cascade do |t|
-    t.string   "status"
-    t.integer  "memb"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "password_digest"
-    t.string   "nationality"
-    t.string   "email"
-    t.string   "emailers"
-    t.string   "dob"
-    t.string   "language"
-    t.string   "gender"
-    t.string   "join_date"
-    t.integer  "admin"
-    t.string   "member"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "chat_messages", force: :cascade do |t|
-    t.text     "body"
-    t.integer  "member_id"
-    t.integer  "chat_room_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["chat_room_id"], name: "index_chat_messages_on_chat_room_id"
-    t.index ["member_id"], name: "index_chat_messages_on_member_id"
-  end
-
-  create_table "chat_rooms", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "member_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_chat_rooms_on_member_id"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
@@ -118,6 +81,38 @@ ActiveRecord::Schema.define(version: 20170222210032) do
     t.string   "message_id"
     t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "status"
+    t.integer  "memb"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "nationality"
+    t.string   "email"
+    t.string   "emailers"
+    t.string   "dob"
+    t.string   "language"
+    t.string   "gender"
+    t.string   "join_date"
+    t.integer  "admin"
+    t.string   "member"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,     null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.boolean  "superadmin_role",        default: false
+    t.boolean  "supervisor_role",        default: false
+    t.boolean  "user_role",              default: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

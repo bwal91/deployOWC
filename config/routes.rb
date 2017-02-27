@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  get '/', to: 'homes#index' # Home page
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_scope :user do 
+    get '/login', :to => 'users/sessions#new', :as => :login
+    post '/login_user', :to => 'users/sessions#create', :as => :login_user
+    get '/logout', :to => 'users/sessions#destroy', :as => :destroy_session
+  end
+  root to: 'homes#index', as: :home # Home page
   get '/back', to: 'homes#index' # Back button option
-
   # Bangalore dropdown navigation bar
   get '/moving_to', to: 'homes#moving_to'
   # Moving to Bangalore Links
@@ -18,17 +24,36 @@ Rails.application.routes.draw do
   # Bangalore dropdown nav bar
   get '/life_in', to: 'homes#life_in'
     # Start
+  get '/pests', to: 'homes#pests'
+  get '/life_other', to: 'homes#life_other'
+  get '/shopping', to: 'homes#shopping'
+  get '/activities', to: 'homes#activities'
+  get '/sightseeing', to: 'homes#sightseeing'
+  get '/life_publication', to: 'homes#life_publication'
   get '/shopping', to: 'homes#shopping'
   get '/activities', to: 'homes#activities'
   get '/sightseeing', to: 'homes#sightseeing'
   get '/w2_publication', to: 'homes#w2_publication'
     # end
   # Membership dropdown navigation bar
-  get '/member_info', to: 'homes#member_info'
   get '/new_member', to: 'homes#new_member' # New Memeber Info, Benefits, etc.
-  get '/renew', to: 'homes#renew' # Renew membership here
+    # Start
+  get '/member_info', to: 'homes#member_info'
+  get '/new_member_app', to: 'homes#new_member_app'
+  get '/payment_gateway', to: 'homes#payment_gateway'
+    # end
+  get '/renew_membership', to: 'homes#renew_membership' # Renew membership here
+  get '/renew_form', to: 'homes#renew_form'
+  # Membership dropdown nav bar
   get '/publication', to: 'homes#publication'
+    # Start
+  get '/member_magazine', to: 'homes#member_magazine'
+  get '/in_and_out', to: 'homes#in_and_out'
+  get '/greeting_cards', to: 'homes#greeting_cards'
+    # End
+  # Membership dropdown nav bar 
   get '/volunteer', to: 'homes#volunteer'
+  get '/public_calendar', to: 'homes#public_calendar'
   # Our Work dropdown navigation bar
   # get '/charities', to: 'homes#charities'
   get '/contributions', to: 'homes#contributions'
@@ -80,9 +105,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :sessions
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
