@@ -22,7 +22,7 @@ class User < ApplicationRecord
 	end
 	
 	def send_admin_mail
-	  UserMailer.send_welcome_email(self).deliver_later
+	  UserMailer.send_welcome_email(self).deliver_now
 	end
 
 	def self.find_for_database_authentication(warden_conditions)

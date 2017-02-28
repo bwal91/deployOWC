@@ -2,17 +2,6 @@
 	margin-left: 20px;
 	padding: 0px;
 }
-// #top_bar {
-// 	margin-bottom: 10px;
-// }
-
-// // .col-md-4 {
-// // 	margin-top: 10px;
-// // }
-
-// #trash {
-// 	margin-right: 10px;
-// }
 #message_pic {
 	max-height: 64px;
 	max-width: 64px;
@@ -25,4 +14,20 @@
 #message_box {
 	overflow: auto;
 	max-height: 500px;
+}
+
+
+#profile_wrapper {
+	margin-top: 100px;
+	margin-left: 400px;
+	height: 500px;
+	width: 850px;
+	border: 3px solid black;
+	overflow: auto;
+	border-radius: 10px;
+	
+}
+.edit_profile {
+	text-align: center;
+	margin-right: 15px;
 }

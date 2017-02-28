@@ -1,0 +1,16 @@
+<style type="text/css">
+	body { height: 600px; padding-bottom: 70px; 
+
+background: #348F50; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #348F50 , #56B4D3); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #348F50 , #56B4D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+	
+
+</style>
+<%= render partial: 'layouts/header' %>
+<%= render partial: 'layouts/editprofilesidebar' %>
+<div id="profile_wrapper">
+<h2> Welcome <%= current_user.first_name %> </h2>
+</div>
+<%= render partial: 'layouts/footer' %>
