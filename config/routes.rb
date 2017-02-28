@@ -30,10 +30,12 @@ Rails.application.routes.draw do
   get '/activities', to: 'homes#activities'
   get '/sightseeing', to: 'homes#sightseeing'
   get '/life_publication', to: 'homes#life_publication'
+
   get '/shopping', to: 'homes#shopping'
   get '/activities', to: 'homes#activities'
   get '/sightseeing', to: 'homes#sightseeing'
   get '/w2_publication', to: 'homes#w2_publication'
+
     # end
   # Membership dropdown navigation bar
   get '/new_member', to: 'homes#new_member' # New Memeber Info, Benefits, etc.
@@ -51,8 +53,11 @@ Rails.application.routes.draw do
   get '/in_and_out', to: 'homes#in_and_out'
   get '/greeting_cards', to: 'homes#greeting_cards'
     # End
-  # Membership dropdown nav bar 
+  # Membership dropdown nav bar
   get '/volunteer', to: 'homes#volunteer'
+  get '/job_openings', to: 'homes#job_openings'
+  get '/volunteer_form', to: 'homes#volunteer_form'
+    # end
   get '/public_calendar', to: 'homes#public_calendar'
   # Our Work dropdown navigation bar
   # get '/charities', to: 'homes#charities'
@@ -109,12 +114,3 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-
-
-
-
-
-
-
-
