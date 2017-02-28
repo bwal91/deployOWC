@@ -47,6 +47,7 @@ gem 'toastr-rails'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin'
 gem 'cancancan'
+gem 'load_and_authorize_resource'
 
 
 #END for Brandon

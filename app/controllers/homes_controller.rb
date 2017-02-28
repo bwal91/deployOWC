@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
-  # skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!
+  load_and_authorize_resource
   # Home Page
   def index
     @me = User.find(75)

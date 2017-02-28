@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users
   devise_scope :user do 
-    get '/login', :to => 'users/sessions#new', :as => :login
-    post '/login_user', :to => 'users/sessions#create', :as => :login_user
-    get '/logout', :to => 'users/sessions#destroy', :as => :destroy_session
+    get '/login', :to => 'devise/sessions#new', :as => :login
+    post '/login_user', :to => 'devise/sessions#create', :as => :login_user
+    get '/logout', :to => 'devise/sessions#destroy', :as => :destroy_session
   end
-  root to: 'homes#index', as: :home # Home page
+  root to: 'homes#index' # Home page
   get '/back', to: 'homes#index' # Back button option
   # Bangalore dropdown navigation bar
   get '/moving_to', to: 'homes#moving_to'
@@ -87,7 +87,7 @@ Rails.application.routes.draw do
   # resources :messages
   # resources :conversations, only: [:index, :show, :destroy]
 
-  resources :chat_rooms, only: [:new, :create, :show, :index]
+
 
   mount ActionCable.server => '/cable'
 
