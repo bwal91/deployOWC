@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  get '/', to: 'homes#index' # Home page
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_scope :user do
+    get '/login', :to => 'users/sessions#new', :as => :login
+    post '/login_user', :to => 'users/sessions#create', :as => :login_user
+    get '/logout', :to => 'users/sessions#destroy', :as => :destroy_session
+  end
+  root to: 'homes#index', as: :home # Home page
   get '/back', to: 'homes#index' # Back button option
   # Bangalore dropdown navigation bar
   get '/moving_to', to: 'homes#moving_to'
@@ -103,9 +110,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :sessions
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

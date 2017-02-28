@@ -3,32 +3,43 @@ class ApplicationController < ActionController::Base
 	helper_method :mailbox
 	helper_method :conversation
 	helper_method :current_user
-  	before_filter :require_login, :unless => :logged_in?
+	# before_action :authenticate_user!
+
 
 	def current_user
-		@current_user = User.find(75)
-		# @current_user ||= User.find(session[:user_id]) if session[:user_id]
-	end
+		# @current_user = User.find(75)
+		@current_user ||= User.find(session[:user_id]) if session[:user_id]
 		
-
-	def authorize
-		redirect_to '/' unless current_user
 	end
+
+	# protected
+
+	# # def configure_permitted_parameters
+ # #  		devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+ # #    	user_params.permit(:email, :password)
+ # #  	end
+
+	def configure_permitted_parameters
+		devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+		devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
+		devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+	end
+ #  end
 
 	private
 
-	def logged_in?
-    	@current_user ||= User.find(session[:user_id]) if session[:user_id]
-  	end
+	# def logged_in?
+ #    	@current_user ||= User.find(session[:user_id]) if session[:user_id]
+ #  	end
 
-  	helper_method :logged_in?
+ #  	helper_method :logged_in?
 
-	def require_login
-		unless current_user
-			flash[:notice] = "You must be logged in to continue!"
-			redirect_to '/'
-		end
-  	end
+	# def require_login
+	# 	unless current_user
+	# 		flash[:notice] = "You must be logged in to continue!"
+	# 		redirect_to '/'
+	# 	end
+ #  	end
 
   	def mailbox
   		@mailbox ||= current_user.mailbox
