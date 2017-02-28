@@ -3,7 +3,9 @@
   <head>
     <title>OWCBangalore</title>
     <%= csrf_meta_tags %>
+
 	<% if controller_name != "home" %>
+
 		<%= stylesheet_link_tag :application, :mailbox  %>
 	<% else %>
     	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>

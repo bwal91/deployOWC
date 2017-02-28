@@ -1,5 +1,6 @@
 class MailboxController < ApplicationController
-  before_filter :require_login
+  before_action :authenticate_user!
+  authorize_resource :class => false
 
   def inbox
     @inbox = mailbox.inbox

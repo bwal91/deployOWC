@@ -18,20 +18,3 @@
 <% end %>
 
 <%= javascript_include_tag 'conversations', 'data-turbolinks-track': 'reload' %>
-
-
-<%= form_for :users, url: :user, html: { class: "" } do |f| %>
-  <div class="form-inputs">
-    <%= f.label :email %>
-    <%= f.text_field :email, required: false, autofocus: true %>
-    <%= f.label :password %>
-    <%= f.text_field :password, required: false %>
-    <%= f.select :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
