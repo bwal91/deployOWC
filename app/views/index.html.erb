@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/assets/bootstrap.min.css" media="all" rel="stylesheet" />
+    <link rel="stylesheet" href="home.scss">
+    <title>Home page</title>
+  </head>
+  <body>
+    <div class="navbar-wrapper">
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-static-top">
+
+        <div class="navbar-header">
+	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </a>
+        <a class="navbar-brand" href="#">OWC Bangalore</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <!-- <li><a href="/posts">Bangalore</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li> -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bangalore <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/moving_to">Moving to Bangalore</a></li>
+                <li><a href="/life_in">Life in Bangalore</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Memebership <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/new_member">New Members</a></li>
+                <li><a href="/renew">Renew Membership</a></li>
+                <li><a href="/publication">Publication</a></li>
+                <li><a href="/volunteer">Volunteer Opportunity</a></li>
+                <li><a href="/renew">Renew Membership</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Work <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/charities">Charities</a></li>
+                <li><a href="/contributions">Contributions</a></li>
+                <li><a href="/fundraising">Fundraising</a></li>
+                <li><a href="/ssg">Social Support Group</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Member's Only <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/chat_room">Chat Room</a></li>
+                <li><a href="/calendar">Public Calendar</a></li>
+                <li><a href="/board_members">Board Members</a></li>
+                <li><a href="/payments">Payment Gateway</a></li>
+                <li><a href="/admin">Admin Page</a></li>
+              </ul>
+            </li>
+            <% if user_signed_in? %>
+              <ul class="nav navbar-nav pull-right">
+                <li><%= link_to "Hello, #{current_user.first_name}", "#" %></li>
+                <li><%= link_to "Inbox", mailbox_inbox_path %></li>
+                <li><a href="">Logout</a></li>
+              </ul>
+              <% else %>
+              <button type="button" class="btn btn-default navbar-btn" action="/login">Login</button>
+              <% end %>
+          </ul>
+        </div>
+    </div>
+  </div><!-- /container -->
+</div><!-- /navbar wrapper -->
+
+
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/assets/example/bg_suburb.jpg" style="width:100%" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Overseas Womens Club</h1>
+          <!-- <p></p>
+          <p><a class="btn btn-lg btn-primary" href="https://www.linkedin.com/in/kyle-johnson-23430b98/">Kyle</a>
+        </p> -->
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/assets/bangalore1.jpg" class="img-responsive">
+    </div>
+    <div class="item">
+      <img src="/assets/bangalore2.jpg" class="img-responsive">
+
+    </div>
+    <div class="item">
+      <img src="/assets/bangalore3.jpg" class="img-responsive">
+
+    </div
+    <div class="item">
+      <img src="/assets/bangalore4.jpg" class="img-responsive">
+      
+    </div
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+</div>
+<!-- /.carousel -->
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="/assets/forest2.jp">
+      <h2>Sponsor</h2>
+      <p>Sponsor information located here.</p>
+      <p><a class="btn btn-default" href="#">View details »</a></p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="/assets/forest2.jpg0">
+      <h2>Sponsor 2</h2>
+      <p>Sponsor information located here.</p>
+      <p><a class="btn btn-default" href="#">View details »</a></p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="/assets/forest4.jpg">
+      <h2>Sponsor 3</h2>
+      <p>Sponsor information located here.</p>
+      <p><a class="btn btn-default" href="#">View details »</a></p>
+    </div>
+  </div><!-- /.row -->
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <nav class="navbar navbar-default navbar-static-bottom">
+      <div class="container-fluid">
+        <!-- About us -->
+        <ul class="bot_dropdown">
+          <li class="about_us">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
+            <ul class="bot_dropdown-menu">
+              <li><a href="/owc_club_info">Club Information</a></li>
+              <li><a href="/mission_statement">Mission Statement</a></li>
+              <li><a href="/journey">Journey so far</a></li>
+              <!-- <li><a href="/contact">Contact</a></li> -->
+            </ul>
+          </li>
+        </ul>
+        <!-- Contact Us -->
+        <ul class="bot_dropdown">
+          <li class="contact_us">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">Contact Us<span class="caret"></span></a>
+            <ul class="bot_dropdown-menu">
+              <li><a href="/contact">Contact Form</a></li>
+              <li><a href="/executive_comittee">Executive Comittee</a></li>
+              <li><a href="/trustee">Trustee</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Advertisements -->
+        <ul class="bot_dropdown">
+          <li class="advertisements">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">Advertisements<span class="caret"></span></a>
+            <ul class="bot_dropdown-menu">
+              <li><a href="/sponsor">Sponsors</a></li>
+              <li><a href="/sponsor_form">Sponsor Form</a></li>
+              <li><a href="/advertisements">Advertisements</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+  </footer>
+
+</div><!-- /.container -->
+  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+</html>
