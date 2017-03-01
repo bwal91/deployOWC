@@ -3,8 +3,6 @@ class HomesController < ApplicationController
   load_and_authorize_resource
   # Home Page
   def index
-    @me = User.find(75)
-    session[:user_id] = @me.id
   end
   def login
   end
