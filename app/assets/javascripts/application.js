@@ -1,9 +1,3 @@
-
-
-
-
-
-
 //= require jquery
 //= require jquery_ujs
 //= require chosen-jquery
@@ -11,7 +5,7 @@
 //= require toastr
 //= require_tree .
 
-  toastr.options = {
+ toastr.options = {
   "closeButton": true,
   "debug": false,
   "newestOnTop": false,

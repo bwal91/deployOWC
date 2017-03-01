@@ -8,23 +8,22 @@
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="/assets/bootstrap.min.css" media="all" rel="stylesheet" />
     <link rel="stylesheet" href="home.scss">
-    <title>Home page</title>
   </head>
   <body>
     <div class="navbar-wrapper">
       <div class="container">
         <div class="navbar navbar-inverse navbar-static-top">
             <div class="navbar-header">
-          <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
+    	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    	      <span class="icon-bar"></span>
+    	      <span class="icon-bar"></span>
+    	      <span class="icon-bar"></span>
+    	    </a>
             <a class="navbar-brand" href="/">OWC Bangalore</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
+                <li class="dropdown-toggle"><a href="/" >Home</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bangalore <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -39,6 +38,7 @@
                     <li><a href="/renew_membership">Renew Membership</a></li>
                     <li><a href="/publication">Publication</a></li>
                     <li><a href="/volunteer">Volunteer Opportunity</a></li>
+                    <li><a href="/public_calendar">Public Calendar</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
@@ -88,7 +88,7 @@
                 </ul>
                <% elsif current_user.superadmin_role == true %>
                 <ul class="nav navbar-nav pull-right" id="loggedinadmin">
-                    <li><a href="/profile">Hello, <%= current_user.first_name %></a></li>
+                    <li><a href="">Hello, <%= current_user.first_name %></a></li>
                     <li><a href="mailbox/inbox">Inbox ( <span style="color: red"><%= unread_messages_count%></span> )</a>
                     <li><a href="/admin">Admin Page</a></li>
                     <li><a href="/logout">Logout</a></li>

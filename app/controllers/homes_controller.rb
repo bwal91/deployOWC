@@ -90,37 +90,68 @@ class HomesController < ApplicationController
   end
     # Start
   def member_magazine
+    render :template => "homes/membership/pubMem/member_magazine"
   end
   def in_and_out
+    render :template => "homes/membership/pubMem/in_and_out"
   end
   def greeting_cards
+    render :template => "homes/membership/pubMem/greeting_cards"
   end
     # End
+  def public_calendar
+    render :template => "homes/membership/public_calendar"
+  end
   # Memebership dropdown nav bar
   def volunteer
     render :template => "homes/membership/volunteer"
   end
-  def public_calendar
-    render :template => "homes/membership/public_calendar"
-  end
     # Start
-  def job_open
+  def job_openings
+    render :template => "homes/membership/volMem/job_openings"
   end
   def volunteer_app
+    render :template => "homes/membership/volMem/volunteer_app"
+  end
+  def volunteer_form
+    render :template => "homes/membership/volMem/volunteer_form"
   end
     # End
   # Our Work dropdown navigation bar
   def charities
     render :template => "homes/ourWork/charities"
   end
+    # Start
+  def charity_map
+    render :template => "homes/ourWork/charity/charities"
+  end
+    # end
+  # Our Work dropdown navigation bar
   def contributions
     render :template => "homes/ourWork/contributions"
   end
+  def contribution_reports
+    render :template => "homes/ourWork/contributions/contributions"
+  end
+  # Our Work dropdown navigation bar
   def fundraising
     render :template => "homes/ourWork/fundraising"
   end
+  def fundraising_news
+    render :template => "homes/ourWork/fund/fundraising_news"
+  end
+  def fundraising_reports
+    render :template => "homes/ourWork/fund/fundraising_reports"
+  end
+  # Our Work dropdown navigation bar
   def ssg # Social Support Group
     render :template => "homes/ourWork/ssg"
+  end
+  def ssg_news
+    render :template => "homes/ourWork/ssg/ssg_news"
+  end
+  def ssg_stories
+    render :template => "homes/ourWork/ssg/ssg_stories"
   end
   # About options on bottom of pages
   def owc_club_info
