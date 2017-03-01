@@ -5,8 +5,8 @@
         <li class="sidebar-brand">
         	<a href="/edit_email" class="edit_profile" style="font-weight: bold; font-size: 120%; margin-top: 15px;"><%=current_user.full_name %></a>
         </li>
-        <li class="edit_profile">
-        	<a href="/change_password">Change Password</a>
+        <li class="edit_profile" style="margin-top: 50px;">
+        	<%= link_to "Change Password", change_password_path(scope: :user) %>
         </li>
         <li class="edit_profile">
         	<a href="">View Payments</a>

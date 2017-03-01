@@ -34,6 +34,7 @@ gem 'rubyzip', '~> 1.0'
 
 gem 'websocket', '~> 1.0'
 
+
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'

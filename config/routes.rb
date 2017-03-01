@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     get '/login', :to => 'devise/sessions#new', :as => :login
     post '/login_user', :to => 'devise/sessions#create', :as => :login_user
     get '/logout', :to => 'devise/sessions#destroy', :as => :destroy_session
+    post '/request_reset', :to => 'devise/passwords#edit', :as => :request_reset
+    get '/change_password', :to => 'devise/passwords#new', :as => :change_password
   end
   root to: 'homes#index' # Home page
   get '/back', to: 'homes#index' # Back button option

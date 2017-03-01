@@ -1,9 +1,22 @@
 <style type="text/css">
-	body { height: 600px; padding-bottom: 70px; 
+	body {overflow: hidden; 
 
-background: #348F50; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #348F50 , #56B4D3); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #348F50 , #56B4D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*background: #348F50;  
+background: -webkit-radial-gradient(50% 50%, circle, #348F50, #56B4D3);
+background:-moz-radial-gradient(50% 50%, circle, #348F50, #56B4D3);
+background:-ms-radial-gradient(50% 50%, circle, #348F50, #56B4D3);
+background:-o-radial-gradient(50% 50%, circle, #348F50, #56B4D3);
+background:radial-gradient(circle at 50% 50%, #348F50, #56B4D3);;*/
+
+background-image: url("/assets/bangalore1.jpg");
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-height: 100%;
+        } 
+
+        #footer-wrapper {
+        	margin-top: 40px;
         }
 	
 
@@ -12,5 +25,33 @@ background: linear-gradient(to left, #348F50 , #56B4D3); /* W3C, IE 10+/ Edge, F
 <%= render partial: 'layouts/editprofilesidebar' %>
 <div id="profile_wrapper">
 <h2> Welcome <%= current_user.first_name %> </h2>
+	<h3>Your Current Profile</h4>
+	<table id="profile_table">
+		<tr>
+			<td class="pro_header">Name: </td>
+			<td class="pro_info"><%= current_user.full_name %></td>
+		</tr>
+		<tr>
+			<td class="pro_header">Email Address: </td>
+			<td class="pro_info"><%= current_user.email %></td>
+		</tr>
+		<tr>
+			<td class="pro_header">OWC Join Date: </td>
+			<td class="pro_info"><%= current_user.join_date %></td>
+		</tr>
+		<tr>
+			<td class="pro_header">Current Status: </td>
+			<td class="pro_info"><%= current_user.status %></td>
+		</tr>
+		<tr>
+			<td class="pro_header">Last Login: </td>
+			<td class="pro_info"><%= current_user.last_sign_in_at.strftime("%H:%M %b %w, %y") %></td>
+		</tr>
+		<tr>
+			<td class="pro_header">Current Profile Picture: </td>
+			<td style="float:right;"><img id="message_pic" class="media-object" src="/assets/messaging_test.jpg" alt="Tiger"></td>
+		</tr>
+	</table>
+
 </div>
 <%= render partial: 'layouts/footer' %>

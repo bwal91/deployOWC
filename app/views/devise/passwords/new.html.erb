@@ -1,15 +1,35 @@
-<h2>Forgot your password?</h2>
+<style type="text/css">
+	body {overflow: hidden; 
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+background: #348F50;  
+background: -webkit-radial-gradient(50% 50%, circle, #348F50, #56B4D3);
+background:-moz-radial-gradient(50% 50%, circle, #348F50, #56B4D3);
+background:-ms-radial-gradient(50% 50%, circle, #348F50, #56B4D3);
+background:-o-radial-gradient(50% 50%, circle, #348F50, #56B4D3);
+background:radial-gradient(circle at 50% 50%, #348F50, #56B4D3);;
+
+	
+        } 
+        #footer-wrapper {
+        	margin-top: 40px;
+        }
+	
+
+</style>
+<%= render partial: 'layouts/header' %>
+<%= render partial: 'layouts/editprofilesidebar' %>
+<div id="profile_wrapper">
+<h2>Change Your Password</h2>
+<p style="font-size: 18px; width: 400px; margin-left: 230px; margin-top: 20px;">In order to protect your identity, you'll need to enter your email below in order to change your current password</p>
+<%= form_for :user, url: "/update_password", html: { class: "" } do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.email_field :email, required: true, autofocus: true, id: "inputs" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+  <div class="form-actions" style="margin-top: 30px;">
+    <%= f.submit "Request Password Reset", class: "btn btn-success", id: "loginbutton" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+<%= render partial: 'layouts/footer' %>

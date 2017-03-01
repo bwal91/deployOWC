@@ -8,7 +8,6 @@
 //= require jquery_ujs
 //= require chosen-jquery
 //= require turbolinks
-//= require bootstrap-sprockets
 //= require toastr
 //= require_tree .
 
@@ -29,3 +28,11 @@
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
   }
+
+$(document).ready(function () {
+  $('.navbar .dropdown').hover(function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
+    }, function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp(105)
+    });
+});
