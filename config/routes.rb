@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  devise_scope :user do 
+  devise_scope :user do
     get '/login', :to => 'devise/sessions#new', :as => :login
     post '/login_user', :to => 'devise/sessions#create', :as => :login_user
     get '/logout', :to => 'devise/sessions#destroy', :as => :destroy_session
   end
   root to: 'homes#index' # Home page
   get '/back', to: 'homes#index' # Back button option
-  # Bangalore dropdown navigation bar
+  # Bangalore dropdown navigation bar*
   get '/moving_to', to: 'homes#moving_to'
   # Moving to Bangalore Links
     # Start
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/banking', to: 'homes#banking'
   get '/pets', to: 'homes#pets'
     # end
-  # Bangalore dropdown nav bar
+  # Bangalore dropdown nav bar*
   get '/life_in', to: 'homes#life_in'
     # Start
   get '/pests', to: 'homes#pests'
@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   get '/w2_publication', to: 'homes#w2_publication'
 
     # end
-  # Membership dropdown navigation bar
+  # Membership dropdown navigation bar*
   get '/new_member', to: 'homes#new_member' # New Memeber Info, Benefits, etc.
     # Start
   get '/member_info', to: 'homes#member_info'
@@ -46,30 +46,47 @@ Rails.application.routes.draw do
     # end
   get '/renew_membership', to: 'homes#renew_membership' # Renew membership here
   get '/renew_form', to: 'homes#renew_form'
-  # Membership dropdown nav bar
+  # Membership dropdown nav bar*
   get '/publication', to: 'homes#publication'
     # Start
   get '/member_magazine', to: 'homes#member_magazine'
   get '/in_and_out', to: 'homes#in_and_out'
   get '/greeting_cards', to: 'homes#greeting_cards'
     # End
-  # Membership dropdown nav bar
+  # Membership dropdown nav bar*
   get '/volunteer', to: 'homes#volunteer'
+    # Start
   get '/job_openings', to: 'homes#job_openings'
   get '/volunteer_form', to: 'homes#volunteer_form'
     # end
+    # Membership nav bar*
   get '/public_calendar', to: 'homes#public_calendar'
-  # Our Work dropdown navigation bar
-  # get '/charities', to: 'homes#charities'
+  # Our Work dropdown navigation bar*
+  get '/charities', to: 'homes#charities'
+    # Start
+  get '/charity_map', to: 'homes#chairty_map'
+    # end
+  # Our Work dropdown navigation bar*
   get '/contributions', to: 'homes#contributions'
+    # Start
+  get '/contribution_reports', to: 'homes#reports'
+    # end
+  # Our Work dropdown navigation bar*
   get '/fundraising', to: 'homes#fundraising'
+    # Start
+  get '/fundraising_news', to: 'homes#fundraising_news'
+  get '/fundraising_reports', to: 'homes#fundraising_reports'
+    # end
+  # Our Work dropdown navigation bar*
   get '/ssg', to: 'homes#ssg' # Social Support Group
-  # Members Only dropdown navigation bar
+    # Start
+  get '/ssg_news', to: 'homes#ssg_news'
+  get '/ssg_stories', to: 'homes#ssg_stories'
+    # end
+  # Members Only dropdown navigation bar*
   get '/chat_room', to: 'chat_rooms#index'
   get '/calendar', to: 'calendars#index'
   get '/board_members', to: 'users#board_members'
-  # get '/payments/'
-  # get '/admin/'
   # About options bottom of page
   get '/owc_club_info', to: 'homes#owc_club_info'
   get '/mission_statement', to: 'homes#mission_statement'

@@ -3,7 +3,7 @@
 -------------------------------------------------- */
 body {
   padding-bottom: 70px;
-  color: #5a5a5a;
+  color: #4E7C4E
 }
 
 
@@ -103,7 +103,6 @@ body {
 }
 
 
-
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
@@ -125,6 +124,9 @@ body {
   .navbar-wrapper .navbar {
     border-radius: 4px;
   }
+  .navbar-collapse{
+    background-color: #4E7C4E;
+  }
 
   /* Bump up size of carousel content */
   .carousel-caption p {
@@ -132,7 +134,6 @@ body {
     font-size: 21px;
     line-height: 1.4;
   }
-
 }
 /* Login Box CSS */
 #login {
@@ -242,4 +243,9 @@ ul {
   display: inline-block;
   position: relative;
   right: -300px;
+}
+#statbot {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  bottom: 0;
 }
