@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  skip_before_action :authenticate_user!
+  before_action :authenticate_user!, :only => [:public_calendar, :board_members]
   load_and_authorize_resource
   # Home Page
   def index
@@ -141,5 +141,7 @@ class HomesController < ApplicationController
   end
   def trustee
     render :template => "homes/contactUs/trustee"
+  end
+  def board_members
   end
 end

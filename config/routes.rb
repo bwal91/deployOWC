@@ -78,6 +78,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'homes#contact'
   # match '/contacts', to: 'contacts#new', via: 'get'
   # resources "contacts", only: [:new, :create]
+  get '/profile', to: 'users#profile'
 
   get '/payments', to: 'payments#index'
   		resources :payments do
