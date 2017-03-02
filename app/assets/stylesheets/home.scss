@@ -3,14 +3,9 @@
 -------------------------------------------------- */
 html,
 body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  overflow-x: hidden;
+  height: 100%; /* Prevent scroll on narrow devices */
 }
-body {
-  padding-bottom: 70px;
-  padding-top: 80px;
-}
-
-
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -18,6 +13,7 @@ body {
 /* Navbar Styling - .navbar-custom is the physical navigation bar */
 .navbar-custom {
   height: 80px;
+  background: linear-gradient(to bottom, #90bb62, #84B451);
   background-color: #84B451;
 }
 .dropdown-toggle{
@@ -30,10 +26,11 @@ body {
   color: white;
   margin-top: 16px; 
 }
-.navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-nav>li>a:focus {
+.navbar-custom .navbar-nav>li>a:hover,
+.navbar-custom .navbar-nav>li>a:focus {
   color: white;
   background-color: #76a248;
+  border-radius: 10px;
 }
 #header_nav {
   width: 100%;
@@ -54,10 +51,12 @@ body {
 // -------------------------------
 /* Footer Nav */
 #footer-wrapper {
-  height: 120px;
+  height: 140px;
   width: 100%;
-  padding-top: 5px;
-  margin-top: 50px;
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  left: 0;
   bottom: 0;
   text-align: center;
   background-color: #84B451;
@@ -84,15 +83,18 @@ ul {
   text-decoration: underline;
 }
 
-#totop {
-  display: inline-block;
-  position: relative;
-  right: -300px;
-}
-#statbot {
-  padding-bottom: 0px;
+#legal {
+  font-size: 10px;
+  display: block;
   margin-bottom: 0px;
-  bottom: 0;
+  padding-bottom: 0px;
+  // margin-bottom: 5px;
+}
+#follow_us {
+  margin-left: 50px;
+}
+#cur_time {
+  vertical-align: top;
 }
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -128,6 +130,7 @@ ul {
 .marketing {
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 30px;
 }
 
 /* Center align the text within the three columns below the carousel */
