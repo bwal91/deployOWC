@@ -7,7 +7,23 @@ body {
   color: #4E7C4E
 }
 
-
+.outer {
+    border: 2px solid red;
+    float:left;
+    top:0;
+    bottom:0;
+    position:absolute;
+    z-index: 10px;
+}
+.jumbotron {
+    max-height:60%;
+    overflow-y:auto;
+    border: 2px solid blue;
+    width:100%;
+    margin-right:2%;
+    float:left;
+    z-index: 10px
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -23,7 +39,7 @@ body {
 }
 .navbar .navbar-inverse {
   box-shadow: none;
-} 
+}
 
 
 /* CUSTOMIZE THE CAROUSEL
