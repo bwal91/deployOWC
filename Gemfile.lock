@@ -95,6 +95,8 @@ GEM
     ffi (1.9.17-x86-mingw32)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -268,6 +270,7 @@ DEPENDENCIES
   chosen-rails
   coffee-rails (~> 4.2)
   devise
+  font-awesome-sass
   haml-rails
   hirb
   jbuilder (~> 2.5)
