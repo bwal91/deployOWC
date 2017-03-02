@@ -33,7 +33,7 @@ gem 'childprocess', '~> 0.5'
 gem 'rubyzip', '~> 1.0'
 
 gem 'websocket', '~> 1.0'
-
+gem 'font-awesome-sass'
 
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
