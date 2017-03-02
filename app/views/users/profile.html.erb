@@ -1,15 +1,45 @@
-<%= render partial: 'layouts/header' %>
-<div class="container-fluid" id="profile_container">
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-xs-12 col-sm-9 col-sm-push-3">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas" title="Toggle sidebar"><i class="fa fa-chevron-right"></i></button>
-          </p>
-          <div class="jumbotron">
-            <h1>Hello, world!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-          </div>
 
-<%= render partial: 'layouts/bottom_sidebar' %>
-
-<%= render partial: 'layouts/footer' %>
+	<div id="profile_wrapper">    
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-md-3" id="leftCol">
+	              
+	                <ul class="nav nav-stacked" id="sidebar">
+	                  <li><a href="#sec0">Change Password</a></li>
+	                  <li><a href="#sec1">View Payments</a></li>
+	                  <li><a href="/">Edit Profile Picture</a></li>
+	                </ul>
+	            </div>  
+				<div class="col-md-9" id="mainCol">
+		          	<br> 
+		          	<h2 id="sec0">Current Profile</h2>
+		            <table id="profile_table">
+						<tr>
+							<td class="pro_header">Name: </td>
+							<td class="pro_info"><%= current_user.full_name %></td>
+						</tr>
+						<tr>
+							<td class="pro_header">Email Address: </td>
+							<td class="pro_info"><%= current_user.email %></td>
+						</tr>
+						<tr>
+							<td class="pro_header">OWC Join Date: </td>
+							<td class="pro_info"><%= current_user.join_date %></td>
+						</tr>
+						<tr>
+							<td class="pro_header">Current Status: </td>
+							<td class="pro_info"><%= current_user.status %></td>
+						</tr>
+						<tr>
+							<td class="pro_header">Last Login: </td>
+							<td class="pro_info"><%= current_user.last_sign_in_at.strftime("%H:%M %b %w, %y") %></td>
+						</tr>
+						<tr>
+							<td class="pro_header">Current Profile Picture: </td>
+							<td style="float:right;"><img id="message_pic" class="media-object" src="/assets/messaging_test.jpg" alt="Tiger"></td>
+						</tr>
+					</table>
+		        </div>
+	    	</div>
+		</div>
+	</div>

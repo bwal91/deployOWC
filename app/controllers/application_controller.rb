@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 
 	before_action :authenticate_user!
-	
 	helper_method :mailbox, :conversation
 	helper_method :current_user
 	
@@ -13,12 +12,14 @@ class ApplicationController < ActionController::Base
 	
 	rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_path, :alert => exception.message
+
+
   	end
-    
 	
 	def after_sign_in_path_for(resource)
 	    :root
 	end
+
 
 	private
 
