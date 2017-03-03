@@ -1,32 +1,52 @@
-//-- MailBox CSS --//
-.btn-success {
-    margin-left: 20px;
-    padding: 0px;
-    height: 30px;
-    width: 100px;
-    padding-top: 5px;
-    padding-bottom: 7px;
+
+//-- Sidebar Page --//
+#main-wrapper {
+  padding-bottom: 140px;
 }
-#message_pic {
-    max-height: 64px;
-    max-width: 64px;
+#main {
+  position: relative;
+  overflow-y: auto;
 }
-.spacer {
-  margin-top: 20px;
+#sidebar-wrapper {
+    height: 100%;
+    padding: 0px 0 140px 0;
+    position: fixed;
+    border-right: 1px solid gray;
 }
-#message_box {
-    overflow: auto;
-    max-height: 500px;
+#sidebar {
+    position: relative;
+    height: 100%;
+    overflow:hidden;
+}
+#sidebar .list-group-item {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+@media (min-width: 992px) {
+  #main-wrapper {
+      float:right;
+      padding-bottom: 140px;
+  }
+}
+@media (max-width: 992px) {
+  #main-wrapper {
+      padding-top: 80px;
+      padding-bottom: 140px;
+  }
+}
+@media (max-width: 992px) {
+  #sidebar-wrapper {
+    position: static;
+    height:auto;
+    max-height: 300px;
+    border-right:0;
+  }
 }
 
-.edit_profile {
-    text-align: center;
-    margin-right: 15px;
-}
-#mailbox_nav {
-	margin-top: 100px;
-}
 
+//-- Header and Footer CSS --//
   // for page scroll
 .navbar-custom {
   height: 80px;
@@ -69,7 +89,7 @@
 // -------------------------------
 /* Footer Nav */
 #footer-wrapper {
-  position: relative;
+  position: fixed;
   bottom: 0;
   height: 140px;
   width: 100%;
@@ -112,8 +132,6 @@ ul {
 #cur_time {
   vertical-align: top;
 }
-
-
 
 
 

@@ -1,12 +1,4 @@
-// @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-/* BOOTSTRAP 3.x GLOBAL STYLES
--------------------------------------------------- */
-body {
-  margin: 0;
-  padding-top: 80px;
-  height: 100%;
-}
-  // for page scroll
+
 
 .jumbotron {
   max-height:500px;
@@ -76,7 +68,6 @@ body {
   // margin-top: 200px;
   text-align: center;
   background-color: #84B451;
-  position: absolute;
 }
 
 
@@ -225,7 +216,7 @@ ul {
 }
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }
-
+}
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -381,3 +372,15 @@ ul {
   padding-right: 0px;
   padding-left: 0px;
 }
+
+
+
+
+
+
+
+
+
+
+
+

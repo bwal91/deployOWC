@@ -8,7 +8,7 @@ class HomesController < ApplicationController
   end
   # Bangalore dropdown bar
   def moving_to
-    render :template => "homes/bangalore/moving_to"
+    render :template => "homes/bangalore/main_view"
   end
   # Moving to Bangalore links
     # start
