@@ -13,13 +13,19 @@ class HomesController < ApplicationController
   # Moving to Bangalore links
     # start
   def healthcare
-    render :template => "homes/bangalore/m2/healthcare"
+    respond_to do |format|
+        format.js
+    end
   end
   def schools
-    render :template => "homes/bangalore/m2/schools"
+    respond_to do |format|
+        format.js
+    end
   end
   def residency
-    render :template => "homes/bangalore/m2/residency"
+    respond_to do |format|
+        format.js
+    end
   end
   def accomodations
     respond_to do |format|
@@ -27,10 +33,14 @@ class HomesController < ApplicationController
     end
   end
   def safe_environments
-    render :template => "homes/bangalore/m2/safe_environments"
+    respond_to do |format|
+        format.js
+    end
   end
   def transportation
-    render :template => "homes/bangalore/m2/transportation"
+    respond_to do |format|
+        format.js
+    end
   end
   def banking
     respond_to do |format|
@@ -38,7 +48,9 @@ class HomesController < ApplicationController
     end
   end
   def pets
-    render :template => "homes/bangalore/m2/pets"
+    respond_to do |format|
+        format.js
+    end
   end
     # end
   # Bangalore dropdown
@@ -48,25 +60,39 @@ class HomesController < ApplicationController
   # life links
     # start
   def festivals
-    render :template => "homes/bangalore/life/festivals"
+    respond_to do |format|
+        format.js
+    end
   end
   def pests
-    render :template => "homes/bangalore/life/pests"
+    respond_to do |format|
+        format.js
+    end
   end
   def life_other
-    render :template => "homes/bangalore/life/life_other"
+    respond_to do |format|
+        format.js
+    end
   end
   def shopping
-    render :template => "homes/bangalore/life/shopping"
+    respond_to do |format|
+        format.js
+    end
   end
   def activities
-    render :template => "homes/bangalore/life/activities"
+    respond_to do |format|
+        format.js
+    end
   end
   def sightseeing
-    render :template => "homes/bangalore/life/sightseeing"
+    respond_to do |format|
+        format.js
+    end
   end
   def life_publication
-    render :template => "homes/bangalore/life/life_publication"
+    respond_to do |format|
+        format.js
+    end
   end
     # end
   # Membership dropdown navigation bar
