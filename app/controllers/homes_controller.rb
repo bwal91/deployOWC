@@ -22,7 +22,9 @@ class HomesController < ApplicationController
     render :template => "homes/bangalore/m2/residency"
   end
   def accomodations
-    render :template => "homes/bangalore/m2/accomodations"
+    respond_to do |format|
+        format.js
+    end
   end
   def safe_environments
     render :template => "homes/bangalore/m2/safe_environments"
@@ -31,7 +33,9 @@ class HomesController < ApplicationController
     render :template => "homes/bangalore/m2/transportation"
   end
   def banking
-    render :template => "homes/bangalore/m2/banking"
+    respond_to do |format|
+        format.js
+    end
   end
   def pets
     render :template => "homes/bangalore/m2/pets"

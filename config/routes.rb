@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   get '/healthcare', to: 'homes#healthcare'
   get '/schools', to: 'homes#schools'
   get '/residency', to: 'homes#residency'
-  get '/accomodations', to: 'homes#accomodations'
+  get '/accomodations', to: 'homes#accomodations', as: 'accomodations'
   get '/safe_environments', to: 'homes#safe_environments'
   get '/transportation', to: 'homes#transportation'
-  get '/banking', to: 'homes#banking'
+  get '/banking', to: 'homes#banking', as: 'banking'
   get '/pets', to: 'homes#pets'
     # end
   # Bangalore dropdown nav bar*
