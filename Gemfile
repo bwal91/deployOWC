@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-# gem 'wdm', '>= 0.1.0' 
+gem 'wdm', '>= 0.1.0' 
 
 gem 'mail_form'
 gem 'hirb'
