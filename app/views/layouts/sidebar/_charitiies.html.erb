@@ -1,0 +1,20 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+    <ul class="nav sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="/charities">
+               Charities
+            </a>
+        </li>
+        <li><a href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
+        <li><a href="/charity_map"><i class="fa fa-fw fa-file-o"></i> Charity Map</a></li>
+        <li><a href="/contributions"><i class="fa fa-fw fa-folder"></i> Contributions</a></li>
+        <li><a href="/fundraising"><i class="fa fa-fw fa-folder"></i> Fundraising</a></li>
+        <li><a href="/ssg"><i class="fa fa-fw fa-folder"></i> Social Support Group</a></li>
+        <li><a href="/bangalore"><i class="fa fa-fw fa-folder"></i> Bangalore</a></li>
+        <li><a href="/membership"><i class="fa fa-fw fa-folder"></i> Membership</a></li>
+        <li><a href="/our_work"><i class="fa fa-fw fa-folder"></i> Our Work</a></li>
+        <% if user_signed_in? %>
+        <li><a href="/membersOnly"><i class="fa fa-fw fa-folder"></i> Member's Only</a></li>
+        <% end %>
+    </ul>
+</nav>
