@@ -47,6 +47,9 @@ class HomesController < ApplicationController
   end
   # life links
     # start
+  def festivals
+    render :template => "homes/bangalore/life/festivals"
+  end
   def pests
     render :template => "homes/bangalore/life/pests"
   end
