@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get '/pests', to: 'homes#pests'
   get '/shopping', to: 'homes#shopping'
   get '/activities', to: 'homes#activities'
+  get '/festivals', to: 'homes#festivals'
     # end
   # Membership dropdown navigation bar*
   get '/new_member', to: 'homes#new_member' # New Memeber Info, Benefits, etc.
