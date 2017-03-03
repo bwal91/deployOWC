@@ -1,22 +1,36 @@
-
+body {
+  overflow: hidden;
+}
 //-- Sidebar Page --//
 #main-wrapper {
-  padding-bottom: 140px;
+  max-height: 553px;
+  margin-top: 10px;
+  overflow: auto;
 }
 #main {
   position: relative;
-  overflow-y: auto;
+  overflow: auto;
+  border: 3px solid #84B451;
+  border-radius: 10px;
 }
 #sidebar-wrapper {
-    height: 100%;
-    padding: 0px 0 140px 0;
+    height: 560px;
+    margin-top: 10px;
     position: fixed;
-    border-right: 1px solid gray;
+    border: 3px solid #84B451;
+    border-radius: 5px;
+    // background-color: #323232;
+    background-color: #c5d1bb;
 }
 #sidebar {
     position: relative;
     height: 100%;
     overflow:hidden;
+    margin-top: 20px;
+}
+#sidebar>li>a {
+  font-size: 15px;
+  color: #107896;
 }
 #sidebar .list-group-item {
     border-radius: 0;
@@ -26,14 +40,13 @@
 }
 @media (min-width: 992px) {
   #main-wrapper {
-      float:right;
-      padding-bottom: 140px;
+    float:right;
+
   }
 }
 @media (max-width: 992px) {
   #main-wrapper {
-      padding-top: 80px;
-      padding-bottom: 140px;
+
   }
 }
 @media (max-width: 992px) {
@@ -44,8 +57,71 @@
     border-right:0;
   }
 }
+//-- Image CSS --//
+.slide-1 {
+  height: 550px;
 
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #107896;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.hero h3 {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.hero {
+    opacity: .3;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+.hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: 0;
+}
+.slide-1 {
+  background-image: url(/assets/welcome.jpg);
+}
 //-- Header and Footer CSS --//
   // for page scroll
 .navbar-custom {

@@ -23,9 +23,7 @@
     text-align: center;
     margin-right: 15px;
 }
-#mailbox_nav {
-	margin-top: 100px;
-}
+
 
   // for page scroll
 .navbar-custom {
@@ -69,7 +67,7 @@
 // -------------------------------
 /* Footer Nav */
 #footer-wrapper {
-  position: relative;
+  position: fixed;
   bottom: 0;
   height: 140px;
   width: 100%;
