@@ -102,13 +102,13 @@
                 <% if current_user %>
                 <% if current_user.superadmin_role == false %>
                 <ul class="nav navbar-nav" id="loggedin">
-                    <li><a href="/profile">Hello, &nbsp <%= current_user.first_name %></a></li>
+                    <li><a href="#">Hello, &nbsp <%= current_user.first_name %></a></li>
                     <li><a href="mailbox/inbox">Inbox ( <span style="color: red"><%= unread_messages_count%></span> )</a></li>
                     <li><a href="/logout">Logout</a></li>
                 </ul>
                <% elsif current_user.superadmin_role == true %>
                 <ul class="nav navbar-nav" id="loggedinadmin">
-                    <li><a href="/profile">Hello, &nbsp <%= current_user.first_name %></a></li>
+                    <li><a href="#">Hello, &nbsp <%= current_user.first_name %></a></li>
                     <li><a href="mailbox/inbox">Inbox ( <span style="color: red"><%= unread_messages_count%></span> )</a></li>
                     <li><a href="/admin">Admin Page</a></li>
                     <li><a href="/logout">Logout</a></li>
@@ -147,8 +147,10 @@
           <li><a href="/ssg">Social Support Group</a></li>
         </ul>
         <ul class="footer_info" id="cur_time">
-          <h4 class="footerheaders">Current Time in Bangalore</h4>
-          <li><p><%= Time.zone.now.strftime('%a, %b %d, %y - %H:%M (%I:%m %p)')   %></p></li>
+          <h4 class="footerheaders" style="margin-bottom: 0px;">Current Time in</h4>
+          <h4 class="footerheaders" style="margin-top: 0px; margin-bottom: 3px;">Bangalore</h4>
+          <li style="margin-top: 2px;"><p><%= Time.zone.now.strftime('%a, %b %d, %y ')%></p></li>
+          <li><p><%= Time.zone.now.strftime('%H:%m (%I:%m %p)')%></p></li>
         </ul>
         <ul class="footer_info" id="follow_us">
           <h4> Follow us </h4>
