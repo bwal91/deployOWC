@@ -140,6 +140,11 @@ class HomesController < ApplicationController
         format.js
     end
   end
+  def other_publication
+    respond_to do |format|
+        format.js
+    end
+  end
     # End
   def public_calendar
     render :template => "homes/membership/public_calendar"
