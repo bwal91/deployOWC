@@ -14,68 +14,68 @@ Rails.application.routes.draw do
   get '/moving_to', to: 'homes#moving_to'
   # Moving to Bangalore Links
     # Start
-  get '/healthcare', to: 'homes#healthcare'
-  get '/schools', to: 'homes#schools'
-  get '/residency', to: 'homes#residency'
+  get '/healthcare', to: 'homes#healthcare', as: 'healthcare'
+  get '/schools', to: 'homes#schools', as: 'schools'
+  get '/residency', to: 'homes#residency', as: 'residency'
   get '/accomodations', to: 'homes#accomodations', as: 'accomodations'
-  get '/safe_environments', to: 'homes#safe_environments'
-  get '/transportation', to: 'homes#transportation'
+  get '/safe_environments', to: 'homes#safe_environments', as: 'safe_environments'
+  get '/transportation', to: 'homes#transportation', as: 'transportation'
   get '/banking', to: 'homes#banking', as: 'banking'
-  get '/pets', to: 'homes#pets'
+  get '/pets', to: 'homes#pets', as: 'pets'
     # end
   # Bangalore dropdown nav bar*
   get '/life_in', to: 'homes#life_in'
     # Start
-  get '/pests', to: 'homes#pests'
-  get '/shopping', to: 'homes#shopping'
-  get '/activities', to: 'homes#activities'
-  get '/festivals', to: 'homes#festivals'
+  get '/pests', to: 'homes#pests', as: 'pests'
+  get '/shopping', to: 'homes#shopping', as: 'shopping'
+  get '/activities', to: 'homes#activities', as: 'activities'
+  get '/festivals', to: 'homes#festivals', as: 'festivals'
     # end
   # Membership dropdown navigation bar*
   get '/new_member', to: 'homes#new_member' # New Memeber Info, Benefits, etc.
     # Start
-  get '/member_info', to: 'homes#member_info'
-  get '/new_member_app', to: 'homes#new_member_app'
-  get '/payment_gateway', to: 'homes#payment_gateway'
+  get '/member_info', to: 'homes#member_info', as: 'member_info'
+  get '/new_member_app', to: 'homes#new_member_app', as: 'new_member_app'
+  get '/payment_gateway', to: 'homes#payment_gateway', as: 'payment_gateway'
     # end
   get '/renew_membership', to: 'homes#renew_membership' # Renew membership here
-  get '/renew_form', to: 'homes#renew_form'
+  get '/renew_form', to: 'homes#renew_form', as: 'renew_form'
   # Membership dropdown nav bar*
   get '/publication', to: 'homes#publication'
     # Start
-  get '/member_magazine', to: 'homes#member_magazine'
-  get '/in_and_out', to: 'homes#in_and_out'
-  get '/greeting_cards', to: 'homes#greeting_cards'
+  get '/member_magazine', to: 'homes#member_magazine', as: 'member_magazine'
+  get '/in_and_out', to: 'homes#in_and_out', as: 'in_and_out'
+  get '/greeting_cards', to: 'homes#greeting_cards', as: 'greeting_cards'
     # End
   # Membership dropdown nav bar*
   get '/volunteer', to: 'homes#volunteer'
     # Start
-  get '/job_openings', to: 'homes#job_openings'
-  get '/volunteer_form', to: 'homes#volunteer_form'
+  get '/job_openings', to: 'homes#job_openings', as: 'job_openings'
+  get '/volunteer_form', to: 'homes#volunteer_form', as: 'volunteer_form'
     # end
     # Membership nav bar*
-  get '/public_calendar', to: 'homes#public_calendar'
+  get '/public_calendar', to: 'homes#public_calendar', as: 'public_calendar'
   # Our Work dropdown navigation bar*
   get '/charities', to: 'homes#charities'
     # Start
-  get '/charity_map', to: 'homes#chairty_map'
+  get '/charity_map', to: 'homes#chairty_map', as: 'charity_map'
     # end
   # Our Work dropdown navigation bar*
   get '/contributions', to: 'homes#contributions'
     # Start
-  get '/contribution_reports', to: 'homes#reports'
+  get '/contribution_reports', to: 'homes#reports', as: 'reports'
     # end
   # Our Work dropdown navigation bar*
   get '/fundraising', to: 'homes#fundraising'
     # Start
-  get '/fundraising_news', to: 'homes#fundraising_news'
-  get '/fundraising_reports', to: 'homes#fundraising_reports'
+  get '/fundraising_news', to: 'homes#fundraising_news', as: 'fundraising_news'
+  get '/fundraising_reports', to: 'homes#fundraising_reports', as: 'fundraising_reports'
     # end
   # Our Work dropdown navigation bar*
   get '/ssg', to: 'homes#ssg' # Social Support Group
     # Start
-  get '/ssg_news', to: 'homes#ssg_news'
-  get '/ssg_stories', to: 'homes#ssg_stories'
+  get '/ssg_news', to: 'homes#ssg_news', as: 'ssg_news'
+  get '/ssg_stories', to: 'homes#ssg_stories', as: 'ssg_stories'
     # end
   # Members Only dropdown navigation bar*
   get '/chat_room', to: 'chat_rooms#index'

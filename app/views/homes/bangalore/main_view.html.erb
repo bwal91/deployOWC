@@ -3,35 +3,29 @@
 <% end %>
 		<div id="wrapper">
 			<div id="sidebar-wrapper" class="col-sm-2">
-	            <ul id="sidebar" class="nav nav-stacked affix">
-			        <li><a href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
-			        <li><%= link_to accomodations_path, :remote => true do %><span>Accomodations</span><% end %></li>
-			        <li><%= link_to banking_path, :remote => true do %><span>Banking</span><% end %></li>
-			        <li><a href="/healthcare"><i class="fa fa-fw fa-file-o"></i>Healthcare</a></li>
-			        <li><a href="/pets"><i class="fa fa-fw fa-file-o"></i> Pets</a></li>
-			        <li><a href="/residency"><i class="fa fa-fw fa-file-o"></i> Residency</a></li>
-			        <li><a href="/safe_enviornments"><i class="fa fa-fw fa-file-o"></i> Safe Environments</a></li>
-			        <li><a href="/schools"><i class="fa fa-fw fa-file-o"></i> International Schools</a></li>
-			        <li><a href="/transportation"><i class="fa fa-fw fa-file-o"></i> Transportation</a></li>
-			        <li><a href="/life_in"><i class="fa fa-fw fa-folder"></i> Life in Bangalore</a></li>
-			        <li><a href="/membership"><i class="fa fa-fw fa-folder"></i> Membership</a></li>
-			        <li><a href="/our_work"><i class="fa fa-fw fa-folder"></i> Our Work</a></li>
-			        <% if user_signed_in? %>
-			        <li><a href="/membersOnly"><i class="fa fa-fw fa-folder"></i> Member's Only</a></li>
-			        <% end %>
-			    </ul>
+        <ul id="sidebar" class="nav nav-stacked affix">
+	        <li><a href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
+	        <li><%= link_to accomodations_path, :remote => true do %><span>Accomodations</span><% end %></li>
+	        <li><%= link_to banking_path, :remote => true do %><span>Banking</span><% end %></li>
+          <li><%= link_to healthcare_path, :remote => true do %><span>Healthcare</span><% end %></li>
+          <li><%= link_to pets_path, :remote => true do %><span>Pets</span><% end %></li>
+          <li><%= link_to residency_path, :remote => true do %><span>Residency</span><% end %></li>
+          <li><%= link_to safe_environments_path, :remote => true do %><span>Safe Environments</span><% end %></li>
+          <li><%= link_to schools_path, :remote => true do %><span>International Schools</span><% end %></li>
+          <li><%= link_to transportation_path, :remote => true do %><span>Transportation</span><% end %></li>
+          <li><%= link_to life_in_path, :remote => true do %><span>Life in Bangalore</span><% end %></li>
+          <li><%= link_to membership_path, :remote => true do %><span>Membership</span><% end %></li>
+          <li><%= link_to our_work_path, :remote => true do %><span>Our Work</span><% end %></li>
+          <% if user_signed_in? %>
+          <li><%= link_to membersOnly_path, :remote => true do %><span>Member's Only</span><% end %></li>
+          <% end %>
+	      </ul>
 			</div>
 			<div id="main-wrapper"  class="col-md-10 pull-right">
 				<div id="main">
 
-					
+
 				</div>
 			</div>
-		
+
 		</div>
-
-
-
-
-
-
