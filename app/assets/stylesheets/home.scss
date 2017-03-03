@@ -7,17 +7,21 @@ body {
   height: 100%;
 }
   // for page scroll
-// .jumbotron {
-//   max-height:500px;
-//   overflow-y:auto;
-//   width:1250px;
-//   margin: auto;
-//   margin-top: 100px;
-//   margin-right: 50px;
-//   margin-left: 150px;
-//   z-index: 10px;
-//   position: relative;
-// }
+
+.jumbotron {
+  max-height:500px;
+  overflow-y:auto;
+  width:1250px;
+  margin: auto;
+  margin-top: 100px;
+  margin-right: 50px;
+  margin-left: 150px;
+  z-index: 10px;
+  position: relative;
+}
+
+
+
 
 
 /* CUSTOMIZE THE NAVBAR
@@ -72,6 +76,7 @@ body {
   // margin-top: 200px;
   text-align: center;
   background-color: #84B451;
+  position: absolute;
 }
 
 
@@ -112,6 +117,7 @@ ul {
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
+
 .fade-carousel {
     position: relative;
     height: 580px;
@@ -218,7 +224,6 @@ ul {
 }
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }    
-}
 
 
 
