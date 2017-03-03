@@ -1,4 +1,19 @@
-<!-- Job openings, volunteer form directed to a certain email -->
-<%= render partial: 'layouts/header' %>
+<%= content_for :stylesheet do %>
+  <%= stylesheet_link_tag 'info', media: 'all', 'data-turbolinks-track': 'reload'  %>
+<% end %>
+		<div id="wrapper">
+			<div id="sidebar-wrapper" class="col-sm-2">
+        <ul id="sidebar" class="nav nav-stacked affix">
+	        <li><a href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
+	        <li><%= link_to job_openings_path, :remote => true do %><span>Job Openings</span><% end %></li>
+	        <li><%= link_to volunteer_form_path, :remote => true do %><span>Volunteer Form</span><% end %></li>
+	      </ul>
+			</div>
+			<div id="main-wrapper"  class="col-md-10 pull-right">
+				<div id="main">
 
-<%= render partial: 'layouts/footer' %>
+
+				</div>
+			</div>
+
+		</div>

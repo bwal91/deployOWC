@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     # Start
   get '/member_info', to: 'homes#member_info', as: 'member_info'
   get '/new_member_app', to: 'homes#new_member_app', as: 'new_member_app'
-  get '/payment_gateway', to: 'homes#payment_gateway', as: 'payment_gateway'
+  get '/benefits', to: 'homes#benefits', as: 'benefits'
     # end
   get '/renew_membership', to: 'homes#renew_membership' # Renew membership here
   get '/renew_form', to: 'homes#renew_form', as: 'renew_form'
@@ -58,12 +58,15 @@ Rails.application.routes.draw do
   # Our Work dropdown navigation bar*
   get '/charities', to: 'homes#charities'
     # Start
+  get '/charities_list', to: 'homes#charities_list', as: 'charities_list'
   get '/charity_map', to: 'homes#chairty_map', as: 'charity_map'
     # end
   # Our Work dropdown navigation bar*
   get '/contributions', to: 'homes#contributions'
     # Start
   get '/contribution_reports', to: 'homes#reports', as: 'reports'
+  get '/report2016', to: 'homes#report2016', as: 'report2016'
+  get '/report2017', to: 'homes#report2017', as: 'report2017'
     # end
   # Our Work dropdown navigation bar*
   get '/fundraising', to: 'homes#fundraising'

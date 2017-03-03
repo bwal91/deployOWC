@@ -14,11 +14,6 @@
           <li><%= link_to schools_path, :remote => true do %><span>International Schools</span><% end %></li>
           <li><%= link_to transportation_path, :remote => true do %><span>Transportation</span><% end %></li>
           <li><%= link_to life_in_path, :remote => true do %><span>Life in Bangalore</span><% end %></li>
-          <li><%= link_to membership_path, :remote => true do %><span>Membership</span><% end %></li>
-          <li><%= link_to our_work_path, :remote => true do %><span>Our Work</span><% end %></li>
-          <% if user_signed_in? %>
-          <li><%= link_to membersOnly_path, :remote => true do %><span>Member's Only</span><% end %></li>
-          <% end %>
 	      </ul>
 			</div>
 			<div id="main-wrapper"  class="col-md-10 pull-right">
