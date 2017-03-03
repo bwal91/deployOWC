@@ -1,17 +1,13 @@
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
-html,
 body {
-  overflow-x: hidden;
-  height: 100%; /* Prevent scroll on narrow devices */
-}
-
-body {
-  padding-bottom: 70px;
+  margin: 0;
   padding-top: 80px;
+  height: 100%;
 }
   // for page scroll
+
 .jumbotron {
   max-height:500px;
   overflow-y:auto;
@@ -25,6 +21,9 @@ body {
 }
 
 
+
+
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -33,6 +32,7 @@ body {
   height: 80px;
   background: linear-gradient(to bottom, #90bb62, #84B451);
   background-color: #84B451;
+  border-bottom: 2px solid #90bb62;
 }
 .dropdown-toggle{
   font-size: 20px;
@@ -69,13 +69,11 @@ body {
 // -------------------------------
 /* Footer Nav */
 #footer-wrapper {
+  position: relative;
+  bottom: 0;
   height: 140px;
   width: 100%;
-  padding: 0px;
-  margin: 0px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  // margin-top: 200px;
   text-align: center;
   background-color: #84B451;
   position: absolute;
@@ -119,77 +117,114 @@ ul {
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
-#thumbnail-preview-indicators {
-  position: relative;
-  overflow: hidden;
+
+
+.fade-carousel {
+    position: relative;
+    height: 580px;
 }
-#thumbnail-preview-indicators .slides .slide-1,
-#thumbnail-preview-indicators .slides .slide-2,
-#thumbnail-preview-indicators .slides .slide-3 {
+.fade-carousel .carousel-inner .item {
+    height: 480px;
+}
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .5;
+}
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: .5;
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.hero h3 {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: .3;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: 0;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 580px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-    #thumbnail-preview-indicators,
-    #thumbnail-preview-indicators .slides,
-    #thumbnail-preview-indicators .slides .slide-1,
-    #thumbnail-preview-indicators .slides .slide-2,
-    #thumbnail-preview-indicators .slides .slide-3 {
-      height: 480px;
-    }
-#thumbnail-preview-indicators .slides .slide-1 {
-  background-image: url(/assets/images/bangalore1.jpg);
+.fade-carousel .slides .slide-1 {
+  background-image: url(/assets/bangalore1.jpg);
 }
-#thumbnail-preview-indicators .slides .slide-2 {
-  background-image: url(/assets/images/bangalore2.jpg);
+.fade-carousel .slides .slide-2 {
+  background-image: url(/assets/bangalore2.jpg);
 }
-#thumbnail-preview-indicators .slides .slide-3 {
-  background-image: url(/assets/images/bangalore3.jpg);
-}
-#thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
-  top: 20%;
-  bottom: inherit;
-}
-#thumbnail-preview-indicators .carousel-indicators li,
-#thumbnail-preview-indicators .carousel-indicators li.active {
-  position: relative;
-  width: 100px;
-  height: 8px;
-}
-#thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
-  position: absolute;
-  top: 0;
-  width: 100px;
-  display: none;
-  opacity: 0;
-  left: 50%;
-  margin-top: -80px;
-  margin-left: -50px;
-}
-#thumbnail-preview-indicators .carousel-indicators li:hover > .thumbnail,
-#thumbnail-preview-indicators .carousel-indicators li.active > .thumbnail {
-  display: block;
-  opacity: .8;
-}
-#thumbnail-preview-indicators .carousel-indicators li.active > .thumbnail:hover{
-  opacity: 1;
-}
-@media screen and (max-width : 480px) {
-    #thumbnail-preview-indicators .carousel-indicators li,
-    #thumbnail-preview-indicators .carousel-indicators li.active {
-      width: 50px;
-      height: 8px;
-      position: relative;
-    }
-    #thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
-       width: 50px;
-       left: 50%;
-       margin-top: -50px;
-       margin-left: -25px;
-    }
+.fade-carousel .slides .slide-3 {
+  background-image: url(/assets/bangalore3.jpg);
 }
 
-
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -198,7 +233,8 @@ ul {
 .marketing {
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
+  margin-top: 15px;
 }
 
 /* Center align the text within the three columns below the carousel */
@@ -215,35 +251,35 @@ ul {
 }
 
 
-/* Featurettes
-------------------------- */
+// /* Featurettes
+// ------------------------- */
 
-.featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
-}
-.featurette {
-  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
-  overflow: hidden; /* Vertically center images part 2: clear their floats. */
-}
-.featurette-image {
-  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-}
+// .featurette-divider {
+//   margin: 80px 0; /* Space out the Bootstrap <hr> more */
+// }
+// .featurette {
+//   padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+//   overflow: hidden; /* Vertically center images part 2: clear their floats. */
+// }
+// .featurette-image {
+//   margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+// }
 
-/* Give some space on the sides of the floated elements so text doesn't run right into it. */
-.featurette-image.pull-left {
-  margin-right: 40px;
-}
-.featurette-image.pull-right {
-  margin-left: 40px;
-}
+// /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+// .featurette-image.pull-left {
+//   margin-right: 40px;
+// }
+// .featurette-image.pull-right {
+//   margin-left: 40px;
+// }
 
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-size: 50px;
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
-}
+// /* Thin out the marketing headings */
+// .featurette-heading {
+//   font-size: 50px;
+//   font-weight: 300;
+//   line-height: 1;
+//   letter-spacing: -1px;
+// }
 
 
 /* RESPONSIVE CSS

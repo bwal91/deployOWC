@@ -1,79 +1,70 @@
-<div id="thumbnail-preview-indicators" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#thumbnail-preview-indicators" data-slide-to="0" class="active">
-        <div class="thumbnail">
-          <img class="img-responsive" src="/assets/images/bangalore1.jpg">
-        </div>
-      </li>
-      <li data-target="#thumbnail-preview-indicators" data-slide-to="1">
-      <div class="thumbnail">
-          <img class="img-responsive" src="/assets/images/bangalore2.jpg">
-        </div>
-      </li>
-      <li data-target="#thumbnail-preview-indicators" data-slide-to="2">
-      <div class="thumbnail">
-          <img class="img-responsive" src="/assets/images/bangalore3.jpg">
-        </div>
-      </li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="item slides active">
-        <div class="slide-1"></div>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>New carousel layout</h1>
-            <p>Responsive thumbnail preview in carousel indicators.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+<%= content_for :stylesheet do %>
+  <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload'  %>
+<% end %>
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+      <!-- Overlay -->
+      <div class="overlay"></div>
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#bs-carousel" data-slide-to="1"></li>
+        <li data-target="#bs-carousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="slide-1"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>Overseas Women's Club of</h1>
+                <h3>Bangalore</h3>
+            </hgroup>
           </div>
         </div>
-      </div>
-      <div class="item slides">
-        <div class="slide-2"></div>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+        <div class="item slides">
+          <div class="slide-2"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>ಸಾಗರೋತ್ತರದಲ್ಲಿ ಮಹಿಳಾ ಕ್ಲಬ್</h1>
+                <h3>ಬೆಂಗಳೂರು</h3>
+            </hgroup>
           </div>
         </div>
-      </div>
-      <div class="item slides">
-        <div class="slide-3"></div>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>One more for good measure.</h1>
-            <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+        <div class="item slides">
+          <div class="slide-3"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>प्रवासी महिला क्लब</h1>
+                <h3>बैंगलोर</h3>
+            </hgroup>
           </div>
         </div>
       </div>
     </div>
-    <a class="left carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a class="right carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-</div>
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
-<div class="container marketing">
-  <div class="row">
-    <div class="col-md-4 text-center">
-      <img class="img-circle" src="/assets/forest1.jpg">
-      <h2>Sponsor 3</h2>
-      <p>Sponsor information located here.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
-    </div>
-    <div class="col-md-4 text-center">
-      <img class="img-circle" src="/assets/forest2.jpg">
-      <h2>Sponsor 3</h2>
-      <p>Sponsor information located here.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
-    </div>
-    <div class="col-md-4 text-center">
-      <img class="img-circle" src="/assets/forest3.jpg">
-      <h2>Sponsor 3</h2>
-      <p>Sponsor information located here.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
-    </div>
-  </div><!-- /.row -->
-</div><!-- /container marketing -->
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container marketing">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img class="img-circle" src="/assets/forest1.jpg">
+          <h2>Sponsor 3</h2>
+          <p>Sponsor information located here.</p>
+          <p><a class="btn btn-default" href="#">View details »</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img class="img-circle" src="/assets/forest2.jpg">
+          <h2>Sponsor 3</h2>
+          <p>Sponsor information located here.</p>
+          <p><a class="btn btn-default" href="#">View details »</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img class="img-circle" src="/assets/forest3.jpg">
+          <h2>Sponsor 3</h2>
+          <p>Sponsor information located here.</p>
+          <p><a class="btn btn-default" href="#">View details »</a></p>
+        </div>
+      </div><!-- /.row -->
+    </div><!-- /container marketing -->

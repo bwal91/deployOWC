@@ -49,6 +49,7 @@ gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin'
 gem 'cancancan'
 gem 'load_and_authorize_resource'
+gem 'normalize-rails'
 
 
 #END for Brandon
