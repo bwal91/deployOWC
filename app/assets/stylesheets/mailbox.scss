@@ -100,7 +100,12 @@ img.bg {
     top: 0;
     left: 0;
 }
-
+ // *= require main
+ // *= require conversations
+ // *= require mailbox
+ // *= require index
+ // *= require profile
+ // *= require simple-sidebar
 // @media screen and (max-width: 767px) {
 //   .row-offcanvas {
 //     position: relative;
