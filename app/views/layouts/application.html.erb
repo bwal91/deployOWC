@@ -32,7 +32,7 @@
       <div id="custom-menu" class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container" id="header_nav">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -42,16 +42,16 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="nav navbar-nav">
-                <li class="action"><a href="/" >Home</a></li>
+                <li class="active"><a href="/" >Home</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" id="drop1" data-toggle="dropdown" role="button">Bangalore <b class="caret"></b></a>
-                  <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                  <a href="#" class="dropdown-toggle" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bangalore <b class="caret"></b></a>
+                  <ul class="dropdown-menu" aria-labelledby="drop1">
                     <li role="presentation"><a href="/moving_to" role="menuitem">Moving to Bangalore</a></li>
                     <li role="presentation"><a href="/life_in" role="menuitem">Life in Bangalore</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button">Memebership <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memebership <b class="caret"></b></a>
                   <ul role="menu" class="dropdown-menu" aria-labelledby="drop2">
                     <li role="presentation"><a href="/new_member" role="menuitem">New Members</a></li>
                     <li role="presentation"><a href="/renew_membership" role="menuitem">Renew Membership</a></li>
@@ -61,7 +61,7 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" id="drop3" data-toggle="dropdown" role="button">Our Work <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" id="drop3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Work <b class="caret"></b></a>
                   <ul role="menu" class="dropdown-menu" aria-labelledby="drop3">
                     <li role="presentation"><a href="/charities" role="menuitem">Charities</a></li>
                     <li role="presentation"><a href="/contributions" role="menuitem">Contributions</a></li>
@@ -71,7 +71,7 @@
                 </li>
                 <% if user_signed_in? %>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" id="drop4" data-toggle="dropdown" role="button">Member's Only <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Member's Only <b class="caret"></b></a>
                   <ul role="menu" class="dropdown-menu" aria-labelledby="drop4">
                     <li role="presentation"><a href="/chat_room" role="menuitem">Chat Room</a></li>
                     <li role="presentation"><a href="/member_calendar" role="menuitem">Member Calendar</a></li>
@@ -81,10 +81,10 @@
                 </li>
                 <% end %>
                 <% if current_user.nil? %>
-                  <li class="dropdown" id="login">
-                  <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="drop5" role="button">Sign In <strong class="caret"></strong></a>
-                    <ul class="dropdown-menu pull-right" role="menu" id="loginbox" aria-labelledby="drop5">
-                    <%= form_for :user, url: "/login_user", html: { class: "" } do |f| %>
+                <li class="dropdown" id="login">
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="drop5" role="button" aria-haspopup="true" aria-expanded="false">Sign In <b class="caret"></b></a>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu" id="loginbox" aria-labelledby="drop4">
+                      <%= form_for :user, url: "/login_user", html: { class: "" } do |f| %>
                       <div class="form-inputs">
                         <%= f.label :email %>
                         <%= f.text_field :email, required: false, autofocus: true, id: "inputs" %>
@@ -96,25 +96,25 @@
                       </div>
                       <% end %>
                     </ul>
-                  </li>
-              </ul>
+                </li>
                 <% end %>
                 <% if current_user %>
                 <% if current_user.superadmin_role == false %>
                 <ul class="nav navbar-nav" id="loggedin">
-                    <li><a href="#">Hello, &nbsp <%= current_user.first_name %></a></li>
-                    <li><a href="mailbox/inbox">Inbox ( <span style="color: red"><%= unread_messages_count%></span> )</a></li>
+                    <p class="navbar-text navbar-right">Hello, &nbsp <%= current_user.first_name %></p>
+                    <li><a href="mailbox/inbox">Inbox <span class="badge" style="color: red"><%= unread_messages_count%></span></a></li>
                     <li><a href="/logout">Logout</a></li>
                 </ul>
                <% elsif current_user.superadmin_role == true %>
                 <ul class="nav navbar-nav" id="loggedinadmin">
-                    <li><a href="#">Hello, &nbsp <%= current_user.first_name %></a></li>
-                    <li><a href="mailbox/inbox">Inbox ( <span style="color: red"><%= unread_messages_count%></span> )</a></li>
+                    <li><a href="#">Hello, <%= current_user.first_name %></a></li>
+                    <li><a href="mailbox/inbox">Inbox <span class="badge"><%= unread_messages_count%></span></a></li>
                     <li><a href="/admin">Admin Page</a></li>
                     <li><a href="/logout">Logout</a></li>
                 </ul>
                 <% end %>
                 <% end %>
+              </ul>
             </div> <!-- /navbar-collapse -->
         </div><!-- /container -->
       </div><!-- /navbar wrapper -->

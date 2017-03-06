@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 20170227201957) do
 
+  enable_extension "plpgsql"  
+
   create_table "Payments", force: :cascade do |t|
     t.string   "date_payment"
     t.string   "date_treasury"

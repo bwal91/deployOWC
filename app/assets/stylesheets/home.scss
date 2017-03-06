@@ -1,5 +1,5 @@
 
-// @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
 body {
@@ -41,13 +41,13 @@ body {
 }
 
 .navbar-nav>li>a {
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   margin-top: 16px;
 }
 .navbar-custom .navbar-nav>li>a:hover,
 .navbar-custom .navbar-nav>li>a:focus {
-  color: white;
+  // color: white;
   background-color: #76a248;
   border-radius: 10px;
 }
@@ -63,10 +63,55 @@ body {
   margin-left: 20px;
   margin-bottom: 15px;
 }
-// .navbar-brand {
-//   width: 100px;
-//   min-height: 80px;
-// }
+
+.navbar-custom .navbar-toggle .icon-bar {
+    background-color: white;
+}
+@media only screen and (max-width : 768px) {
+    .navbar-custom {
+      height: 40px;
+    }
+    .navbar-collapse {
+      background-color: #84B451;
+      height: auto;
+      margin-left: 0;
+      overflow: auto;
+    }
+    #login {
+      position: relative;
+      margin-left: 0px;
+    }
+    .navbar-brand>img {
+      max-width: 5%;
+      max-height: 5%;
+      display: inline-block;
+    }
+    .navbar-nav>li {
+      padding-bottom: 0;
+    }
+    .dropdown-toggle{
+      font-size: 115px;
+
+    }
+
+}
+.navbar-custom .navbar-nav .dropdown-menu {
+  background-color: #84B451;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
+  border: 0;
+  padding: 0;
+  margin-top: 0;
+  border-top: 0;
+  border-radius: 5px;
+}
+
+
+.navbar-custom .navbar-nav .dropdown-menu > li.divider {
+  background-color: transparent;
+}
+
 // -------------------------------
 /* Footer Nav */
 #footer-wrapper {
@@ -314,7 +359,6 @@ ul {
 /* Login Box CSS */
 #login {
   margin-left: 480px;
-  position: relative;
 }
 
 #logbut {
@@ -326,14 +370,13 @@ ul {
   margin-top: 10px;
 }
 #loginbox {
-  font-family: 'Open Sans', sans-serif;
-  background: #092756;
-  background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
-  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-  background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-  background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+  background-color: rgba(0,0,0,.85);
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
+  margin-top: 0;
+  border-top: 0;
+  border-radius: 5px;
   padding: 10px;
   padding-bottom: 0px;
   width: 300px;
@@ -348,8 +391,8 @@ ul {
 #inputs {
   width: 100%;
   margin-bottom: 10px;
-  background: rgba(0,0,0,0.3);
-  border: none;
+  background: #999999;
+  border: 1px solid #999999;
   outline: none;
   padding: 10px;
   font-size: 13px;
@@ -383,4 +426,7 @@ ul {
   padding-right: 0px;
   padding-left: 0px;
 }
-
+.badge {
+  height: 25px;
+  font-size: 17px;
+}

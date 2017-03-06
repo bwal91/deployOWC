@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   get '/member_magazine', to: 'homes#member_magazine', as: 'member_magazine'
   get '/in_and_out', to: 'homes#in_and_out', as: 'in_and_out'
   get '/greeting_cards', to: 'homes#greeting_cards', as: 'greeting_cards'
-  get '/other_publication', to: 'homes@other_publication', as: 'other_publication'
+  get '/other_publication', to: 'homes#other_publication', as: 'other_publication'
     # End
   # Membership dropdown nav bar*
   get '/volunteer', to: 'homes#volunteer'
